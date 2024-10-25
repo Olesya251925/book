@@ -9,15 +9,16 @@ repositories {
     mavenCentral()
 }
 
+
 dependencies {
+    implementation("com.google.code.gson:gson:2.10.1")
+    compileOnly("org.projectlombok:lombok:1.18.28")
+    annotationProcessor("org.projectlombok:lombok:1.18.28")
+
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
-
-    implementation("com.google.code.gson:gson:2.10.1")
-    implementation ("org.projectlombok:lombok:1.18.28")
-    annotationProcessor ("org.projectlombok:lombok:1.18.28")
-
 }
+
 
 tasks.test {
     useJUnitPlatform()

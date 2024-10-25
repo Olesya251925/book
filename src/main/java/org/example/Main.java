@@ -27,8 +27,8 @@ public class Main {
                 System.out.println("4 - Проверить, есть ли книга автора 'Jane Austen' в избранном.");
                 System.out.println("5 - Вывести максимальное количество книг в избранном.");
                 System.out.println("6 - Сгруппировать посетителей по количеству избранных книг и отправить SMS.");
-                System.out.print("Ваш выбор: ");
                 System.out.println("\nВыберите задание (1-6) или 0 для выхода:");
+                System.out.print("Ваш выбор: ");
 
                 int taskNumber = scanner.nextInt();
 

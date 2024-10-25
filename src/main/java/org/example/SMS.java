@@ -1,8 +1,8 @@
 package org.example;
 
 public class SMS {
-    private String phoneNumber;
-    private String message;
+    private final String phoneNumber;
+    private final String message;
 
     public SMS(String phoneNumber, String message) {
         this.phoneNumber = phoneNumber;
@@ -15,5 +15,13 @@ public class SMS {
 
     public String getMessage() {
         return message;
+    }
+
+    @Override
+    public String toString() {
+        return "SMS{" +
+                "phoneNumber='" + phoneNumber + '\'' +
+                ", message='" + message + '\'' +
+                '}';
     }
 }

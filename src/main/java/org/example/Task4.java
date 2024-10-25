@@ -2,17 +2,21 @@ package org.example;
 
 import java.util.List;
 
-
 public class Task4 {
     // Метод execute принимает список посетителей и проверяет, есть ли у них книги Джейн Остин.
-    public static void execute(List<Visitor> visitors) {
-        // Используем поток для обработки списка посетителей
-        boolean hasAustenBook = visitors.stream()  // Преобразуем список посетителей в поток.
-                .flatMap(visitor -> visitor.getFavoriteBooks().stream())  // Объединяем все любимые книги всех посетителей в один поток.
-                .anyMatch(book -> book.getAuthor().equalsIgnoreCase("Jane Austen"));  // Проверяем, есть ли хотя бы одна книга от Джейн Остин.
+    public static boolean execute(List<Visitor> visitors) {
+        // Проверяем наличие книг Джейн Остин у посетителей
+        boolean hasAustenBooks = visitors.stream()
+                .flatMap(visitor -> visitor.getFavoriteBooks().stream()) // Разворачиваем список книг для каждого посетителя
+                .anyMatch(book -> book.getAuthor().equalsIgnoreCase("Jane Austen"));
 
-        // Выводим результат проверки на экран
-        System.out.println("Есть ли книга Jane Austen в избранном? " + (hasAustenBook ? "Да" : "Нет"));  // Форматируем вывод результата.
+        // Выводим соответствующее сообщение
+        if (hasAustenBooks) {
+            System.out.println("Есть посетители с книгами Jane Austen.");
+        } else {
+            System.out.println("Нет посетителей с книгами Jane Austen.");
+        }
+
+        return hasAustenBooks; // Возвращаем булевое значение
     }
 }
-

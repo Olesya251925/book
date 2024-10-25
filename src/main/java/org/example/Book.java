@@ -25,29 +25,25 @@ public class Book {
         return author;
     }
 
-    public String getIsbn() {
-        return isbn;
-    }
-
     public int getPublishingYear() {
         return publishingYear;
     }
 
-    // Переопределение equals
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true; // Проверка на ссылочную равенство
-        if (!(o instanceof Book)) return false; // Проверка типа
-        Book book = (Book) o; // Приведение типа
-        return publishingYear == book.publishingYear && // Сравнение полей
-                Objects.equals(name, book.name) &&
-                Objects.equals(author, book.author) &&
-                Objects.equals(isbn, book.isbn);
-    }
-
-    // Переопределение hashCode
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, author, isbn, publishingYear); // Генерация хэш-кода
-    }
+    // Переопределение метода equals для сравнения объектов Book
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true; // Проверка на ссылочную равенство
+//        if (!(o instanceof Book book)) return false; // Проверка, что o является экземпляром Book
+//        // Сравнение полей на равенство
+//        return publishingYear == book.publishingYear && // Сравнение года издания
+//                Objects.equals(name, book.name) && // Сравнение названия книги
+//                Objects.equals(author, book.author) && // Сравнение автора книги
+//                Objects.equals(isbn, book.isbn); // Сравнение ISBN
+//    }
+//
+//    // Переопределение метода hashCode для генерации хэш-кода объекта Book
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(name, author, isbn, publishingYear); // Генерация хэш-кода на основе всех полей
+//    }
 }
